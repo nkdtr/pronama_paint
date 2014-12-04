@@ -167,6 +167,14 @@ public void SetCoreActivity( bool bActive )
         }
          */
 
+        Camera tgtCam = sceneCamera;
+        // try to spawn depending on distance
+        Ray touchRay = tgtCam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(touchRay, out hit, 100.0f))
+        {
+            Vector3 pos = hit.point;
+        }
 #if false
         if (/*_currentDrag &&*/ bAddable)
         {
