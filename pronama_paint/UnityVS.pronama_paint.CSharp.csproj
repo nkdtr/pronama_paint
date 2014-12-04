@@ -55,6 +55,7 @@
     <Compile Include="Assets\Metaball\MetaballCellObject.cs" />
     <Compile Include="Assets\Metaball\MetaballGenerator.cs" />
     <Compile Include="Assets\Metaball\SkinnedMetaballCell.cs" />
+    <Compile Include="Assets\StrokeSeed.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
