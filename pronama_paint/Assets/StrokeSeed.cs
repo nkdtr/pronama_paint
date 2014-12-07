@@ -111,9 +111,9 @@ public class StrokeSeed : MonoBehaviour {
     {
         _cells.ClearCells();
         _cells.BaseRadius = radius;
-        _cells.AddCell(Vector3.zero, minDistance);
+//        _cells.AddCell(Vector3.zero, minDistance);
 
-        _startCell = _goalCell = _cells.GetCell(0);
+//        _startCell = _goalCell = _cells.GetCell(0);
 
         SetupModel();
     }
@@ -154,7 +154,7 @@ public void SetCoreActivity( bool bActive )
 
     // Update is called once per frame
 	void Update () {
-        bool bAddable = true;
+        //bool bAddable = true;
         /*
         MonsterManualGameControl ctrl = FindObjectOfType<MonsterManualGameControl>();
         if (ctrl != null)
@@ -262,6 +262,17 @@ public void SetCoreActivity( bool bActive )
     }
      */
 
+    public MetaballCell TryAddCell(Vector3 position, float exclusiveDistance)
+    {
+        MetaballCell c = _cells.AddCell(position, exclusiveDistance);
+
+        if (c != null)
+        {
+            SetupModel();
+        }
+        return c;
+    }
+
     protected void SetupModel()
     {
         Utils.DestroyChildren(meshObj.transform);
@@ -270,7 +281,7 @@ public void SetCoreActivity( bool bActive )
        // Transform[] bones;
         //		MonsterMeshGenerator_Tree.Instance.CreateMesh( _individual, skinnedMesh.transform, out mesh, out bones );
       //  MetaballGenerator.Instance.CreateMeshWithSkeleton(_rootCell, meshObj.transform, out mesh, out bones, cellObjPrefab, true);
-        MetaballGenerator.Instance.CreateMesh(_cells, meshObj.transform, out mesh, null, true);
+        MetaballGenerator.Instance.CreateMesh(_cells, meshObj.transform, out mesh, null, false);
         mesh.RecalculateBounds();
 //        mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 500.0f);
         //mesh.RecalculateBounds();
