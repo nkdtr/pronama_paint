@@ -166,7 +166,7 @@ public void SetCoreActivity( bool bActive )
             bAddable = _cells.CellCount < DungeonMakerConfiguration.Instance.DungeonCellCount;
         }
          */
-
+        /*
         Camera tgtCam = sceneCamera;
         // try to spawn depending on distance
         Ray touchRay = tgtCam.ScreenPointToRay(Input.mousePosition);
@@ -175,6 +175,8 @@ public void SetCoreActivity( bool bActive )
         {
             Vector3 pos = hit.point;
         }
+         */
+
 #if false
         if (/*_currentDrag &&*/ bAddable)
         {

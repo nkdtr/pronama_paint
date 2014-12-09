@@ -26,13 +26,16 @@ public class RakugakiControl : MonoBehaviour {
             {
                 // try adding metaball cell
                 Vector3 pos = hitInfo.point;
+
+                Matrix4x4 wtl = seed.transform.worldToLocalMatrix;
+                Vector3 localPos = wtl.MultiplyPoint(pos);
                 /*
                 GameObject inst = (GameObject)Instantiate(brushPrefab);
                 inst.transform.position = pos;
 
                 inst.transform.parent = hitInfo.collider.transform;
                 */
-                if (seed.TryAddCell(pos, 0.5f) != null)
+                if (seed.TryAddCell(localPos, 0.5f) != null)
                 {
                     //seed.
                 }
